@@ -14,6 +14,8 @@ Things you can do to contribute:
 
 Things not to contribute:
 * Obfuscated code: Do not make your code harder to read or obfuscated. Please make your code understandable.
+
+Please send a pull request to the `review` branch!
   
 
 # Report bugs
