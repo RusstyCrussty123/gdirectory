@@ -1,4 +1,5 @@
 var games = [
+  "addicting_welcome.html",
   "https://www.addictinggames.com/embed/html5-games/23687",
   "https://www.addictinggames.com/embed/html5-games/23683",
   "https://www.addictinggames.com/embed/html5-games/24386",
@@ -34,12 +35,22 @@ var games = [
   "https://bobydob.github.io/bside/",
   "https://bobydob.github.io/neo/",
   "https://uploads.ungrounded.net/alternate/1581000/1581619_alternate_120871_r1.zip/?NewgroundsAPI_PublisherID=1&NewgroundsAPI_SandboxID=606b9b2f00063&NewgroundsAPI_SessionID=&NewgroundsAPI_UserName=%26lt%3Bdeleted%26gt%3B&NewgroundsAPI_UserID=0&ng_username=%26lt%3Bdeleted%26gt%3B",
-  "https://html5.gamemonetize.com/pv5rvtf9hd9nr878f2rcg8tnzs99z13o/?key=y8&value=default"
+  "https://html5.gamemonetize.com/pv5rvtf9hd9nr878f2rcg8tnzs99z13o/?key=y8&value=default",
+  "https://www.crazygames.com/gameframe/downtown-1930s-mafia/40/index.html?v20201116072332",
+  "https://www.crazygames.com/gameframe/drift-hunters?202004231457",
+  "https://www.crazygames.com/gameframe/crazy-roll-3d/13/index.html?v20201221110451",
+  "https://emulatoronline.com/",
+  "https://bing.com/",
+  "https://emulatorgames.net/",
+  "https://rustyphysics.glitch.me",
+  "https://fnf.kdata1.com/fnf-v291/"
 ]
-var current = 0
+var current = 0;
+var removedChat = false;
 
 window.addEventListener("load", ()=>{
   var frame=document.getElementById("game_frame");
+  var chatframe=document.getElementById("chat_frame");
   var id=document.getElementById("gameid");
 
   function game(){
@@ -63,8 +74,22 @@ window.addEventListener("load", ()=>{
 
   document.getElementById("fullscreen").addEventListener("click", ()=>{
     if (frame.className!=="fullscreen"){
+      chatframe.style.display="none";
       frame.className="fullscreen"; createDialog("fullscreen enabled", "click again to disable");
     }else{ frame.className=""; }
+  });
+  
+  document.getElementById("chatroom").addEventListener("click", ()=>{
+    if (removedChat==false) {
+      frame.className="left";
+      chatframe.style.display="block";
+    }else{
+      createDialog("Chat was removed", "Refresh to bring back chat");
+    }
+  });
+  document.getElementById("chatroom_remove").addEventListener("click", ()=>{
+    removedChat=true
+    chatframe.remove();
   });
 
   document.getElementById("setgame").addEventListener("click", ()=>{

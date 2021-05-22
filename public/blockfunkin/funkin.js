@@ -340,16 +340,16 @@ function onKeyPress(e){
       edit(0, {x:150});
       break;
       
-    case "ArrowLeft":
+    case "arrowleft":
       edit(0, {x:0});
       break;
-    case "ArrowDown":
+    case "arrowdown":
       edit(0, {x:50});
       break;
-    case "ArrowUp":
+    case "arrowup":
       edit(0, {x:100});
       break;
-    case "ArrowRight":
+    case "arrowright":
       edit(0, {x:150});
       break;
       

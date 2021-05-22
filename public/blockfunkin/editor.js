@@ -189,7 +189,7 @@ function saveMap(){
   )
 }
 
-document.onkeypress = function(e){
+document.onkeydown = function(e){
   e=e || window.event;
   
   console.log(e.key);
@@ -245,19 +245,19 @@ document.onkeypress = function(e){
       break;
       
       // Arrow Keys
-    case "left arrow":
+    case "arrowleft":
       edit(0, {x:0});
       makeBlock();
       break;
-    case "down arrow":
+    case "arrowdown":
       edit(0, {x:50});
       makeBlock();
       break;
-    case "up arrow":
+    case "arrowup":
       edit(0, {x:100});
       makeBlock();
       break;
-    case "right arrow":
+    case "arrowright":
       edit(0, {x:150});
       makeBlock();
       break;

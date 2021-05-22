@@ -1,3 +1,28 @@
+@font-face {
+  font-family: zen;
+  src: url("https://cdn.glitch.com/2338f2c8-12d9-4abd-a190-baa757408c49%2FZenDots-Regular.ttf?v=1621563633563");
+}
+@font-face {
+  font-family: tri;
+  src: url("https://cdn.glitch.com/2338f2c8-12d9-4abd-a190-baa757408c49%2FTrispace-VariableFont_wdth%2Cwght.ttf?v=1621564083060");
+}
+
+
+.title {
+  font-family: zen;
+  color: cyan;
+  font-family: zen;
+  text-shadow: cyan 5px 5px 15px;
+}
+.description {
+  font-family: tri;
+  text-shadow: white 5px 5px 15px;
+}
+.protheme {
+  background-image: url("http://www.hdwallpaper.nu/wp-content/uploads/2015/03/Smoke-on-Carbon-Pattern-Wallpaper.jpg");
+}
+
+
 body {
   background-color: black;
   color: white;
@@ -16,7 +41,7 @@ a:active {
   margin-left: 20px;
 }
 iframe {
-  border: cyan 5px inset;
+  border: cyan 5px solid;
 }
 button {
   transition-duration: 120ms;
@@ -33,6 +58,20 @@ input {
   border: cyan 2px solid;
   color: cyan;
 }
+label {
+  color: white;
+}
+
+.video {
+  border-radius: 10px;
+  border: white 5px solid;
+  background-color: #202020;
+  display: inline-block;
+}
+.video video, p {
+  margin: 5px;
+}
+
 
 .scrollable {
   height: 250px;
@@ -89,4 +128,12 @@ input {
 }
 #welcome {
   height: 50%;
+}
+.left {
+  width: 78%;
+  display:inline-block;
+}
+.right {
+  width: 20%;
+  float: right;
 }

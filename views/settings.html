@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Settings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link type="image/png" rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png">
+    <script src="jquery.js"></script>
+    <script src="updater.js"></script>
+    
+    <script>
+      window.addEventListener("load", ()=>{
+        let config = ["theme_pro"]
+        document.getElementById("saveChanges").addEventListener("click", ()=>{
+          for (let i=0; i<config.length; i++) window.localStorage.setItem(config[i], document.getElementById(config[i]).checked)
+        });
+      });
+    </script>
+  </head>
+  <body>
+    
+    <h1 class="title">GDirectory Settings</h1>
+    <a class="description" style="text-shadow: cyan 5px 5px 15px;" href="/">Main Page</a>
+    <hr/>
+    <br/>
+    
+    <div>
+      <ul>
+        <li> <input type="checkbox" id="theme_pro" name="protheme"> <label for="theme_pro">Pro Theme (this only works on supported pages)</label> </li>
+        <li> <input type="checkbox" id="sample" name="sample"> <label for="sample">Sample Checkbox (does nothing)</label> </li>
+      </ul>
+      
+      <button id="saveChanges">Save Changes</button>
+    </div>
+    
+  </body>
+</html>

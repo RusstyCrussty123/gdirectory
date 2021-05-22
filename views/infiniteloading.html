@@ -4,16 +4,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link type="image/png" rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png">
-    <script src="jquery.js"></script>
-    <script src="qc/script.js"></script>
+    <script src="loading.js"></script>
+    
   </head>
   <body>
     
-    <h1>Quick chat</h1>
-    <a href="/">Main Page</a>
-    <hr/>
-    <br/>
-    <iframe id="game_frame" class="fullscreen" style="resize:both;" allowfullscreen="true" src="loading.html"></iframe>
+    <script>
+      document.body.addEventListener("click", createLoading);
+    </script>
     
   </body>
 </html>
