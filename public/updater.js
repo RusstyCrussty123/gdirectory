@@ -11,6 +11,7 @@ $.get("/version", (data)=>{
 function checkForUpdates(){
   $.get("/version", (data)=>{
     console.log("Checked for update");
+    localStorage.setItem("tag",data.tag)
     if (data.v!=v&&data.message=="") {
       console.log("New update found. Going to mainpage for update.");
       location=data.redirect;
@@ -46,3 +47,9 @@ function createDialog(title, message, extra){
   
   return div;
 }
+
+window.addEventListener("load", ()=>{
+  if (localStorage.getItem("theme_pro")=="true") {
+    document.body.setAttribute("class", "protheme")
+  }
+});

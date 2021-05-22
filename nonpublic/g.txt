@@ -1,0 +1,9 @@
+<div class="video">
+        <video width="320" height="240" controls>
+          <source src="https://cdn.discordapp.com/attachments/758757809696407618/837752595011338290/video0-165-1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      
+      
+`<div class="video"><video width="320" height="240" controls><source src="https://cdn.discordapp.com/attachments/758757809696407618/837752595011338290/video0-165-1.mp4" type="video/mp4">Your browser does not support the video tag.</video></div>`

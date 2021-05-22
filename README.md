@@ -1,30 +1,26 @@
-# hello-express
+# Gdirectory
+Gdirectory is an open sourced webgame site.  
+If you want to contribute here are the steps for that.  
+There are no advertisements on the website.  
+Some games that are on the website have ads but we are not making any revenue from them.  
 
-A server that serves a webpage, its resources, and some data
+# How to contribute
 
+Things you can do to contribute:
+* Fix bugs
+* Optimize code
+* Add new games
+* Add new links in the front page
 
-## Your Project
+Things not to contribute:
+* Obfuscated code: Do not make your code harder to read or obfuscated. Please make your code understandable.
 
-On the front-end,
+Please send a pull request to the `review` branch!
+  
 
-- Edit `views/index.html` to change the content of the webpage
-- `public/client.js` is the javacript that runs when you load the webpage
-- `public/style.css` is the styles for `views/index.html`
-- Drag in `assets`, like images or music, to add them to your project
+# Report bugs
+If something isn't working check the console `(Ctrl+Shift+I)` and report the bug here.
 
-On the back-end,
-
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`
-- safely store app secrets in `.env` (nobody can see this but you and people you invite)
-
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy.
-
-
-## Made by [Glitch](https://glitch.com/)
-
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
-
-Find out more [about Glitch](https://glitch.com/about).
-
-( ᵔ ᴥ ᵔ )
+# Please note
+This version isn't always up to date with the [website version](https://gdirectory.glitch.me).  
+The github will most likely be updated when big changes are made.  
