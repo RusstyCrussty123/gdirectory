@@ -3,7 +3,17 @@
     <title>Loading</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script data-ad-client="ca-pub-5533562023996837" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    <script>
+      console.stdlog = console.log.bind(console);
+      console.logs = [];
+      console.log = function(){
+          console.logs.push(Array.from(arguments));
+          console.stdlog.apply(console, arguments);
+      }
+      window.addEventListener("load", ()=>{ for (let i=0;i<console.logs.length;i++) document.getElementById("loadinfo").innerHTML+="\n"+console.logs[i]; })
+    </script>
+    
     <script src="jquery.js"></script>
     <script src="ezlib.js"></script>
     <script src="updater.js"></script>
@@ -13,5 +23,7 @@
     <a href="https://gdirectory.glitch.me">gdirectory</a>
     <hr/>
     <img src="https://cdn.glitch.com/a0e95398-9276-4d65-b1ad-163ce4e927a2%2FYoutube_loading_symbol_1_(wobbly).gif?v=1615485545643">
+    <br/>
+    <textarea style="width:auto;height:auto;" id="loadinfo">[Load-Info]</textarea>
   </body>
 </html>

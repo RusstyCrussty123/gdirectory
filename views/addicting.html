@@ -18,6 +18,7 @@
     <button id="fullscreen">FullScreen</button>
     <button id="chatroom">Open Chat</button>
     <button id="chatroom_remove">Delete Chat</button>
+    <button id="toggleLogs">Toggle Logs</button>
     <br>
     <input id="gameid_input">
     <button id="setgame">Set Game ID</button>
@@ -28,6 +29,7 @@
     
     <div>
       <iframe id="game_frame" style="resize:both;" width="70%" height="70%" allow="fullscreen" src="addicting_welcome.html"></iframe>
+      <div id="logs" class="right" style="resize:both;display:none;" width="30%" height="70%" allow="fullscreen"> <textarea style="width:100%; height:100%;" id="logarea">[Console]:</textarea> </div>
       <iframe id="chat_frame" class="right" height="70%" style="display:none;" allow="fullscreen" src="https://chatquick.glitch.me/"></iframe>
     </div>
     

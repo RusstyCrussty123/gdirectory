@@ -38,4 +38,4 @@ const ezlib={
 	
 };
 
-console.log("ezlib 2.0 loaded.")
+console.log("ezlib 2.0 loaded.") // Written by rustycrusty

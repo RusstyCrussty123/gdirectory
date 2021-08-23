@@ -6,8 +6,8 @@ const bodyParser = require('body-parser');
 const viewsPath=__dirname+"/nonpublic/views.txt";
 const LOCKDOWN=false;
 const Auth = express.Router(); 
-var VERSION = "v1.08";
-var MESSAGE = "";
+var VERSION = "v3.05";
+var MESSAGE = "staircase";
 var TAG = "";
 
 var WTV_debounce=false
