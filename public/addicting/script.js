@@ -43,10 +43,14 @@ var games = [
   "https://bing.com/",
   "https://emulatorgames.net/",
   "https://rustyphysics.glitch.me",
-  "https://fnf.kdata1.com/fnf-v291/"
+  "https://fnf.kdata1.com/fnf-v291/",
+  "https://pearsonrealize.com/",
+  "https://html-browser.netlify.com/",
+  "graal.html"
 ]
 var current = 0;
 var removedChat = false;
+var logOn = false;
 
 window.addEventListener("load", ()=>{
   var frame=document.getElementById("game_frame");
@@ -54,7 +58,7 @@ window.addEventListener("load", ()=>{
   var id=document.getElementById("gameid");
 
   function game(){
-      this.setFrame = ()=>{id.innerHTML="Game Id: "+current; frame.src=games[current]};
+      this.setFrame = ()=>{id.innerHTML="Game Id: "+current; frame.src=games[current]; console.log("game changed",current,games[current]);};
       this.next = ()=>{current+=1; this.setFrame()};
       this.back = ()=>{current-=1; this.setFrame()};
       this.set = (n)=>{current=n; this.setFrame()};
@@ -96,5 +100,24 @@ window.addEventListener("load", ()=>{
       var n=document.getElementById("gameid_input").value;
       G.set(parseInt(n));
   });
+  
+  document.getElementById("toggleLogs").addEventListener("click", ()=>{
+    logOn=!logOn;
+    console.log("log toggled", logOn);
+    
+    if (logOn) {
+      document.getElementById("logs").style.display="block";
+    }else{
+      document.getElementById("logs").style.display="none";
+    }
+  });
+  
+  console.stdlog = console.log.bind(console);
+  console.logs = [];
+  console.log = function(){
+      console.logs.push(Array.from(arguments));
+      console.stdlog.apply(console, arguments);
+      document.getElementById("logarea").innerHTML+="\n"+Array.from(arguments)
+  }
   
 });

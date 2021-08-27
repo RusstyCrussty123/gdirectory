@@ -53,3 +53,5 @@ window.addEventListener("load", ()=>{
     document.body.setAttribute("class", "protheme")
   }
 });
+
+console.log("Come work with us!", "https://github.com/RusstyCrussty123/gdirectory");

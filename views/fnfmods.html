@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>FM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body { 
+        background-color: black;
+        color: white;
+      }
+      iframe {
+        border: green 5px solid;
+        width: 100%;
+        height: 100%;
+        resize: both;
+      }
+      h1 {color: green}
+      #title_screen {
+        margin: 50px;
+      }
+    </style>
+    <script src="fnfmods.js"></script>
+  </head>
+  <body>
+    <div id="title_screen">
+      <h1>A website with fnf mods.</h1>
+      <hr/>
+      <p id="mod_name">None selected. Please select a game</p>
+      <button id="back_mod">back</button>
+      <button id="next_mod">next</button>
+      <hr/>
+      <br/>
+    </div>
+    <iframe src="" id="mod_frame" style="display: none;"></iframe>
+  </body>
+</html>
